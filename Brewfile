@@ -4,6 +4,7 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap 'heroku/brew'
+tap 'superfly/tap'
 
 # Binaries
 brew 'bash' # Latest Bash version
@@ -37,6 +38,7 @@ brew 'jq'
 brew 'z'
 brew 'pandoc'
 brew 'heroku'
+brew 'flyctl'
 brew 'hugo'
 brew 'graphviz'
 brew 'pipx'
