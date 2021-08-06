@@ -36,7 +36,7 @@ if test ! $(which conda); then
 fi
 
 # source zshrc and then install poetry
-source ~/.zshrc
+source $HOME/.zshrc
 
 python -V
 
