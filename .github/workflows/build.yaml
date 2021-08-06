@@ -10,7 +10,10 @@ jobs:
 
     steps:
       - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          path: .dotfiles
+      
+      - name: Run install
         run: |
-          git clone https://github.com/SarthakJariwala/dotfiles.git $HOME/.dotfiles
-          cd ~/$HOME
           ./fresh.sh
