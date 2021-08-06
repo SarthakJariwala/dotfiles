@@ -20,7 +20,7 @@ brew tap homebrew/bundle
 brew bundle
 
 # Clone Github repositories
-./clone.sh
+# ./clone.sh
 
 # Install miniconda from conda-forge
 if test ! $(which conda); then
