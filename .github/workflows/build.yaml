@@ -18,4 +18,5 @@ jobs:
         run: |
           echo $HOME
           ls -a
+          cd .dotfiles
           sh fresh.sh
