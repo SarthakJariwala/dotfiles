@@ -43,7 +43,7 @@ brew 'openssl'
 brew 'node'
 brew 'act'
 brew 'wget'
-
+brew 'croc'
 
 # Apps
 cask '1password'
@@ -58,7 +58,6 @@ cask 'slack'
 cask 'the-unarchiver'
 cask 'transmission'
 cask 'transmit'
-cask 'croc'
 # cask 'tunnelbear'
 cask 'rectangle'
 cask 'visual-studio-code'
