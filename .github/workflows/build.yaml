@@ -16,4 +16,6 @@ jobs:
       
       - name: Run install
         run: |
-          ./fresh.sh
+          echo $HOME
+          ls -a
+          sh fresh.sh
