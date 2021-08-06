@@ -13,11 +13,11 @@ if test ! $(which brew); then
 fi
 
 # Update Homebrew recipes
-brew update
+# brew update
 
 # Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
-brew bundle
+# brew tap homebrew/bundle
+# brew bundle
 
 # Clone Github repositories
 # ./clone.sh
@@ -27,7 +27,7 @@ rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # Symlink the Mackup config file to the home directory
-# ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
+ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 # Install miniconda from conda-forge
 if test ! $(which conda); then
@@ -35,3 +35,7 @@ if test ! $(which conda); then
   /bin/bash Miniforge3.sh -b
 fi
 
+python -V
+
+# Install Poetry
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
