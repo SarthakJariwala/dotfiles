@@ -46,15 +46,9 @@ if test ! $(which conda); then
   conda install --yes pandas scipy numpy matplotlib seaborn
 fi
 
-zsh
-
 if test $(which $SHELL) = /bin/zsh; then
   # source zshrc
   source $HOME/.zshrc
-fi
-
-if test $(which $SHELL) = /bin/bash; then
-  source $HOME/.bash_profile
 fi
 
 python -V
@@ -62,4 +56,5 @@ python -V
 # Check for Poetry and install if we don't have it
 if test ! $(which poetry); then
   curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+  source $HOME/.poetry/env
 fi
