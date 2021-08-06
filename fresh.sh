@@ -36,9 +36,11 @@ if test ! $(which conda); then
 fi
 
 export PATH=$HOME/anaconda/bin:$PATH
+# Install basic data science stack into default environment
+conda install --yes pandas scipy numpy matplotlib seaborn
 
 # source zshrc and then install poetry
-zsh
+source $HOME/.zshrc
 
 python -V
 
