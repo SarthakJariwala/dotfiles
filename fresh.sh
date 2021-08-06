@@ -41,7 +41,7 @@ conda init "$(basename "${SHELL}")"
 conda install --yes pandas scipy numpy matplotlib seaborn
 
 # source zshrc and then install poetry
-zsh
+source $HOME/.bash_profile
 
 python -V
 
