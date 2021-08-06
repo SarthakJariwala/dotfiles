@@ -33,7 +33,6 @@ ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 # Symlink the Mackup config file to the home directory
 ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
-which zsh
 # Check for conda and install if we don't have it
 if test ! $(which conda); then
   curl -fsSLo Miniforge3.sh https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-$(uname -m).sh
@@ -47,12 +46,12 @@ if test ! $(which conda); then
   conda install --yes pandas scipy numpy matplotlib seaborn
 fi
 
-source $HOME/.dotfiles/.zshrc
+if test $(which $SHELL) = /bin/zsh; then
+  # source zshrc
+  source $HOME/.zshrc
+fi
 
-# source zshrc and then install poetry
-source $HOME/.bash_profile
-
-which python
+python -V
 
 # Check for Poetry and install if we don't have it
 if test ! $(which poetry); then
