@@ -7,6 +7,8 @@ if test ! $(which omz); then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
+chsh -s /bin/zsh
+
 source $HOME/.zshrc
 
 # Check for Homebrew and install if we don't have it
@@ -23,8 +25,6 @@ fi
 
 # Clone Github repositories
 # ./clone.sh
-
-source $HOME/.zshrc
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
