@@ -27,7 +27,7 @@ rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # Symlink the Mackup config file to the home directory
-ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
+# ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 # Install miniconda from conda-forge
 if test ! $(which conda); then
