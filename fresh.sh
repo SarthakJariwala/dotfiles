@@ -41,19 +41,20 @@ if test ! $(which conda); then
   /bin/bash Miniforge3.sh -b
   rm -rf Miniforge3.sh
   export PATH=$HOME/anaconda/bin:$PATH
+  
+  conda init "$(basename "${SHELL}")"
+
+  # Install basic data science stack into default environment
+  conda install --yes pandas scipy numpy matplotlib seaborn
+  
+  # Removes .condarc from $HOME (if it exists) and symlinks the .condarc file from the .dotfiles
+  # .condarc file currently not supported by mackup
+  rm -rf $HOME/.condarc
+  ln -s $HOME/.dotfiles/.condarc $HOME/.condarc
 fi
-
-conda init "$(basename "${SHELL}")"
-
-# Install basic data science stack into default environment
-conda install --yes pandas scipy numpy matplotlib seaborn
-
-# for debugging purposes - check which python is being used to install poetry
-which python
-python -V
 
 # Check for Poetry and install if we don't have it
 if test ! $(which poetry); then
-  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
   source $HOME/.poetry/env
 fi
