@@ -47,7 +47,7 @@ if test ! $(which conda); then
   conda install --yes pandas scipy numpy matplotlib seaborn
 fi
 
-source $HOME/.zshrc
+source $HOME/.dotfiles/.zshrc
 
 # source zshrc and then install poetry
 source $HOME/.bash_profile
