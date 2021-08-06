@@ -7,8 +7,6 @@ if test ! $(which omz); then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
-chsh -s /bin/zsh
-
 source $HOME/.zshrc
 
 # Check for Homebrew and install if we don't have it
@@ -26,31 +24,24 @@ fi
 # Clone Github repositories
 # ./clone.sh
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
-
-# Symlink the Mackup config file to the home directory
-ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 # Check for conda and install if we don't have it
 if test ! $(which conda); then
   curl -fsSLo Miniforge3.sh https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-$(uname -m).sh
   /bin/bash Miniforge3.sh -b
   rm -rf Miniforge3.sh
-  
-  export PATH=$HOME/anaconda/bin:$PATH
-  
-  conda init "$(basename "${SHELL}")"
-  # Install basic data science stack into default environment
-  conda install --yes pandas scipy numpy matplotlib seaborn
 fi
 
-if test $(which $SHELL) = /bin/zsh; then
-  # source zshrc
-  source $HOME/.zshrc
-fi
+export PATH=$HOME/anaconda/bin:$PATH
 
+source $HOME/.zshrc
+
+conda init "$(basename "${SHELL}")"
+
+# Install basic data science stack into default environment
+conda install --yes pandas scipy numpy matplotlib seaborn
+
+which python
 python -V
 
 # Check for Poetry and install if we don't have it
@@ -58,3 +49,10 @@ if test ! $(which poetry); then
   curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
   source $HOME/.poetry/env
 fi
+
+# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
+rm -rf $HOME/.zshrc
+ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+
+# Symlink the Mackup config file to the home directory
+ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
