@@ -44,6 +44,9 @@ brew 'node'
 brew 'act'
 brew 'wget'
 brew 'croc'
+brew 'tldr'
+brew 'terminal-notifier'
+brew 'thefuck'
 
 # Apps
 cask '1password'
