@@ -11,5 +11,6 @@ jobs:
     steps:
       - name: Checkout repository
         run: |
-          git clone https://github.com/SarthakJariwala/dotfiles.git ~/.dotfiles
-          ~/.dotfiles/fresh.sh
+          git clone https://github.com/SarthakJariwala/dotfiles.git $HOME/.dotfiles
+          cd ~/$HOME
+          ./fresh.sh
