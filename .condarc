@@ -1,0 +1,6 @@
+channels:
+  - conda-forge
+  - defaults
+
+# remove "(base)"/"env" prompt
+changeps1: False
