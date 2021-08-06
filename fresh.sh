@@ -35,6 +35,9 @@ if test ! $(which conda); then
   /bin/bash Miniforge3.sh -b
 fi
 
+# source zshrc and then install poetry
+source ~/.zshrc
+
 python -V
 
 # Install Poetry
