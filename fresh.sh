@@ -35,6 +35,8 @@ if test ! $(which conda); then
   /bin/bash Miniforge3.sh -b
 fi
 
+export PATH=$HOME/anaconda/bin:$PATH
+
 # source zshrc and then install poetry
 zsh
 
