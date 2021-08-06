@@ -33,6 +33,7 @@ brew 'datasette'
 brew 'sqlite-utils'
 brew 'sqlite'
 brew 'pre-commit'
+brew 'jq'
 brew 'z'
 brew 'pandoc'
 brew 'heroku'
@@ -61,7 +62,6 @@ cask 'slack'
 cask 'the-unarchiver'
 cask 'transmission'
 cask 'transmit'
-# cask 'tunnelbear'
 cask 'rectangle'
 cask 'visual-studio-code'
 cask 'vlc'
@@ -88,4 +88,4 @@ cask 'font-source-serif-pro'
 mas 'Spark', id: 1176895641
 mas 'Speedtest', id: 1153157709
 mas 'AdBlock', id: 1402042596
-mas 'Grammarly for Safar', id: 1462114288
+mas 'Grammarly for Safari', id: 1462114288
