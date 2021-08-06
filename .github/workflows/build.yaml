@@ -1,0 +1,15 @@
+name: Fresh MacOS Build Test
+
+on:
+  - push
+
+jobs:
+  test-master-script:
+    name: Test master script
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        run: |
+          git clone https://github.com/SarthakJariwala/dotfiles.git ~/.dotfiles
+          ~/.dotfiles/fresh.sh
