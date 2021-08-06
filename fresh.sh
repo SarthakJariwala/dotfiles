@@ -46,9 +46,15 @@ if test ! $(which conda); then
   conda install --yes pandas scipy numpy matplotlib seaborn
 fi
 
+zsh
+
 if test $(which $SHELL) = /bin/zsh; then
   # source zshrc
   source $HOME/.zshrc
+fi
+
+if test $(which $SHELL) = /bin/bash; then
+  source $HOME/.bash_profile
 fi
 
 python -V
