@@ -50,6 +50,6 @@ source $HOME/.bash_profile
 which python
 
 # Check for Poetry and install if we don't have it
-if test ! (which poetry); then
+if test ! $(which poetry); then
   curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 fi
