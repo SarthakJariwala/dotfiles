@@ -3,6 +3,10 @@ alias reloadshell="source $HOME/.zshrc"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
 
+# Conda
+alias ca="conda activate"
+alias cda="conda deactivate"
+
 # Directories
 alias dotfiles="cd $DOTFILES"
 

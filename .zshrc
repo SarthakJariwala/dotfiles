@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 
@@ -115,3 +117,40 @@ source $ZSH/oh-my-zsh.sh
 
 # z --- cd on steroids
 . $(brew --prefix)/etc/profile.d/z.sh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/sjariwala/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/sjariwala/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/sjariwala/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/sjariwala/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+export PATH="$HOME/.poetry/bin:$PATH"
+eval "$(starship init zsh)"
+source $HOME/z/z.sh
+
+# Created by `pipx` on 2021-08-12 23:52:27
+export PATH="$PATH:/Users/sjariwala/.local/bin"
+
+eval $(thefuck --alias)
+
+# secretive app - ssh config management
+export SSH_AUTH_SOCK=/Users/sjariwala/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
+
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+NREL_API_KEY="V0QxOCVmPwbOZWIh41c7K7ZmwBZNEASgNJX9ALpn"
+NREL_EMAIL="sarthakjariwala1@gmail.com"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
